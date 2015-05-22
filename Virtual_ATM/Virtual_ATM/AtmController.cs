@@ -68,14 +68,20 @@ namespace Virtual_ATM
                 case "1":
                     
                     model.Withdraw(customerNumber);
+                     string OP = view.UserOptions();
+                    UserOptions(OP);
                     break;
 
                 case "2":
                     model.Deposit(customerNumber);
+                      string OPP = view.UserOptions();
+                    UserOptions(OPP);
                     break;
                     
-                //case 3:
-                //    model.
+                case "3":
+                    model.Display(customerNumber);
+                    break;
+
                 
                 
                 
