@@ -11,8 +11,8 @@ namespace Virtual_ATM
     {
 
        AtmDBcontext db = new AtmDBcontext();
-       UserModel user = new UserModel();
-       AccountModel account = new AccountModel();
+       User user = new User();
+       Account account = new Account();
        AtmView view = new AtmView();
       
         

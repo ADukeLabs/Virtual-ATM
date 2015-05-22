@@ -7,13 +7,13 @@ namespace Virtual_ATM.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class init : IMigrationMetadata
+    public sealed partial class user_account_relationship : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(init));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(user_account_relationship));
         
         string IMigrationMetadata.Id
         {
-            get { return "201505212225084_init"; }
+            get { return "201505220202259_user_account_relationship"; }
         }
         
         string IMigrationMetadata.Source

@@ -3,42 +3,42 @@ namespace Virtual_ATM.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class init : DbMigration
+    public partial class user_account_relationship : DbMigration
     {
         public override void Up()
         {
             CreateTable(
-                "dbo.AccountModels",
+                "dbo.Accounts",
                 c => new
                     {
-                        Id = c.Int(nullable: false, identity: true),
+                        Id = c.Int(nullable: false),
                         CustomerNumber = c.String(),
                         AccountNumber = c.String(),
                         AccountBalance = c.Decimal(nullable: false, precision: 18, scale: 2),
                     })
-                .PrimaryKey(t => t.Id);
+                .PrimaryKey(t => t.Id)
+                .ForeignKey("dbo.Users", t => t.Id)
+                .Index(t => t.Id);
             
             CreateTable(
-                "dbo.UserModels",
+                "dbo.Users",
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
                         Name = c.String(),
                         Address = c.String(),
-                        CustomerNumber_Id = c.Int(),
+                        Password = c.String(),
                     })
-                .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.AccountModels", t => t.CustomerNumber_Id)
-                .Index(t => t.CustomerNumber_Id);
+                .PrimaryKey(t => t.Id);
             
         }
         
         public override void Down()
         {
-            DropForeignKey("dbo.UserModels", "CustomerNumber_Id", "dbo.AccountModels");
-            DropIndex("dbo.UserModels", new[] { "CustomerNumber_Id" });
-            DropTable("dbo.UserModels");
-            DropTable("dbo.AccountModels");
+            DropForeignKey("dbo.Accounts", "Id", "dbo.Users");
+            DropIndex("dbo.Accounts", new[] { "Id" });
+            DropTable("dbo.Users");
+            DropTable("dbo.Accounts");
         }
     }
 }
