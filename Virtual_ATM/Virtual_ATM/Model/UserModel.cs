@@ -11,6 +11,7 @@ namespace Virtual_ATM.Model
        public int Id { get; set; }
        public string Name { get; set; }
        public string Address { get; set; }
+       public string Password { get; set; }
        //public int Paygrade { get; set; }
        public virtual AccountModel CustomerNumber { get; set; }
     }

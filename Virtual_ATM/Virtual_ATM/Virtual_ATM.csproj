@@ -50,16 +50,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AtmController.cs" />
     <Compile Include="AtmDBcontext.cs" />
+    <Compile Include="Model\AtmModel.cs" />
     <Compile Include="Migrations\201505212225084_init.cs" />
     <Compile Include="Migrations\201505212225084_init.Designer.cs">
       <DependentUpon>201505212225084_init.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\AccountModel.cs" />
+    <Compile Include="Model\AtmView.cs" />
     <Compile Include="Model\UserModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Router.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
