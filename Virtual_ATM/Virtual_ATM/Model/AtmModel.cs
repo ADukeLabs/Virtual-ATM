@@ -7,95 +7,53 @@ using Virtual_ATM.Model;
 
 namespace Virtual_ATM
 {
-   public class AtmModel
+    public class AtmModel
     {
 
-       AtmDBcontext db = new AtmDBcontext();
-       User user = new User();
-       Account account = new Account();
-       AtmView view = new AtmView();
-      
+        AtmDBcontext db = new AtmDBcontext();
+        AtmView view = new AtmView();
         
-       
-       public void Withdraw( string customerNumber)
+        public void Withdraw(string customerNumber)
         {
             Console.WriteLine("How much would you like to withdraw from your account today?");
-            int withdrawAmount = int.Parse( Console.ReadLine());
+            int withdrawAmount = int.Parse(Console.ReadLine());
             var n = db.Accounts.FirstOrDefault(x => x.CustomerNumber == customerNumber);
             decimal balance = n.AccountBalance - withdrawAmount;
             if (balance > 0)
             {
                 n.AccountBalance = balance;
-                decimal b=n.AccountBalance - balance;
-                  view.ShowBalance(b);
-                
+                //decimal b = n.AccountBalance - balance;
+                view.ShowBalance(balance);
             }
             else
             {
-                
                 view.NOBalance();
             }
-
+            
             db.SaveChanges();
         }
 
-        public void Deposit( string customerNumber)
+        public void Deposit(string customerNumber)
         {
             Console.WriteLine("How much would you like to deposit today?");
             int depositAmount = int.Parse(Console.ReadLine());
-
             var n = db.Accounts.FirstOrDefault(x => x.CustomerNumber == customerNumber);
             decimal balance = n.AccountBalance + depositAmount;
-
-
-
+            
+            n.AccountBalance = balance;
             view.ShowBalance(balance);
-        
-
-
-
             db.SaveChanges();
-
-
         }
 
-        public void LogOff()
+        public void Display(string name)
         {
-            Console.Clear();
-
+            var n = db.Accounts.FirstOrDefault(x => x.CustomerNumber == name);
+            view.ShowBalance(n.AccountBalance);
         }
 
 
-       //public void DisplayBalance()
-       //{
-           
-       //}
-
-       //public void Create()
-       //{
-       ////     public int Id { get; set; }
-       ////public string Name { get; set; }
-       ////public string Address { get; set; }
-       ////public string Password { get; set; }
-       //////public int Paygrade { get; set; }
-       ////public virtual AccountModel CustomerNumber { get; set; }
-       //    Console.WriteLine("enter ur name");
-       //    string name = Console.ReadLine();
-       //    Console.WriteLine("enter ur Addrss");
-       //    string adress = Console.ReadLine();
-       //    Console.WriteLine("enter ur password");
-       //    string pswd = Console.ReadLine();
-
-
-       //    Random random = new Random();
-       //   string cusnum = random.Next(100000, 999999).ToString();
-           
-
-
-       //    db.Users.Add(new UserModel() {Address = adress, Name = name, Password = pswd,CustomerNumber = account.CustomerNumber=cusnum});
 
 
 
-       //}
     }
 }

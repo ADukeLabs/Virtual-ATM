@@ -9,40 +9,35 @@ namespace Virtual_ATM.Model
 {
     public class AtmView
     {
-
         public void AsciiWelcome()
         {
             List<string> list = new List<string>();
-            using (StreamReader reader = new StreamReader("file.txt"))
+            using (StreamReader reader = new StreamReader("welcomemessage.txt"))
             {
                 string line;
+
                 while ((line = reader.ReadLine()) != null)
                 {
                     list.Add(line); 
                     Console.WriteLine(line); 
                 }
             }
-
-
         }
-
 
         public void Welcome(string customerNumber)
         {
-            Console.WriteLine(" Welcome to roa {0}", customerNumber );
+            Console.WriteLine("\nWelcome to roa {0}\n", customerNumber );
         }
 
         public void IncorrectPassword()
         {
             Console.WriteLine("Sorry, but that is a invalid password. Please try again.");
-            
         }
 
         public void InvalidUserName()
         {
             Console.WriteLine("Sorry, but we have no record of that Username.");
         }
-
 
         public string UserOptions()
         {
@@ -56,16 +51,14 @@ namespace Virtual_ATM.Model
             return usersOption;
         }
 
-
         public void ShowBalance(decimal balance)
         {
-            Console.WriteLine("Your current balance is  : {0}", balance );
+            Console.WriteLine("\nYour current balance is: {0}\n", balance );
         }
 
         public void NOBalance()
         {
-            Console.WriteLine("Sorry, unfortunately you have insuffecient funds to make this transaction.");
+            Console.WriteLine("\nSorry, unfortunately you have insuffecient funds to make this transaction.");
         }
-
     }
 }

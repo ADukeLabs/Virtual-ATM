@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Virtual_ATM.Model;
 
 namespace Virtual_ATM
 {
@@ -10,6 +11,9 @@ namespace Virtual_ATM
     {
         public void Propmt()
         {
+            AtmView view = new AtmView();
+            view.AsciiWelcome();
+            Console.WriteLine("\n");
             Console.WriteLine("Hi and Welcome to the Bank of Roa's virtual ATM");
             Console.WriteLine("Please enter your Customer Number");
             string customerNum = Console.ReadLine();

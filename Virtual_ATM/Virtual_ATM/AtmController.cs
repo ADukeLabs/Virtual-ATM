@@ -25,23 +25,22 @@ namespace Virtual_ATM
 
         public void Access(string name, string password)
         {
-
-
-
-            if (acc.CustomerNumber == name)
+            var table = db.Accounts.FirstOrDefault(x => x.CustomerNumber == name);
+            var utable = db.Users.FirstOrDefault(x => x.Password == password);
+            if (table.CustomerNumber == name)
             {
-                if (user.Password == password)
+                if (utable.Password == password)
                 {
+
                     view.Welcome(customerNumber);
-
+                    string OP = view.UserOptions();
+                    UserOptions(OP);
                 }
-
                 else
                 {
                     view.IncorrectPassword();
                     router.Propmt();
                 }
-
             }
 
             else
@@ -49,7 +48,6 @@ namespace Virtual_ATM
                 view.InvalidUserName();
             }
              Option = view.UserOptions();
-           
         }
 
 
@@ -57,7 +55,7 @@ namespace Virtual_ATM
 
 
 
-        public void UserOptions()
+        public void UserOptions(string Option)
         {
 
            

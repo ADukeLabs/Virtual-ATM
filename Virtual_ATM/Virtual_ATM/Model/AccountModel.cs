@@ -10,8 +10,6 @@ namespace Virtual_ATM.Model
 {
   public  class Account
     {
-        //[Key]
-        //[DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
         public string CustomerNumber { get; set; }
         public string AccountNumber { get; set; }
