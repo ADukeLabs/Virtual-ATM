@@ -8,13 +8,15 @@ using System.Threading.Tasks;
 
 namespace Virtual_ATM.Model
 {
-  public  class AccountModel
+  public  class Account
     {
-        [Key, ForeignKey("User")]
+        //[Key]
+        //[DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
         public string CustomerNumber { get; set; }
         public string AccountNumber { get; set; }
-        public virtual UserModel User { get; set; }
+        [Required]
+        public virtual User User { get; set; }
         public decimal AccountBalance { get; set; }
     }
 }

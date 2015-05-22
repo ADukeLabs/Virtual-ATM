@@ -51,17 +51,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AtmDBcontext.cs" />
-    <Compile Include="Migrations\201505212225084_init.cs" />
-    <Compile Include="Migrations\201505212225084_init.Designer.cs">
-      <DependentUpon>201505212225084_init.cs</DependentUpon>
+    <Compile Include="Migrations\201505220117180_init.cs" />
+    <Compile Include="Migrations\201505220117180_init.Designer.cs">
+      <DependentUpon>201505220117180_init.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201505212244162_added_password.cs" />
-    <Compile Include="Migrations\201505212244162_added_password.Designer.cs">
-      <DependentUpon>201505212244162_added_password.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201505212353460_added_ref_to_account.cs" />
-    <Compile Include="Migrations\201505212353460_added_ref_to_account.Designer.cs">
-      <DependentUpon>201505212353460_added_ref_to_account.cs</DependentUpon>
+    <Compile Include="Migrations\201505220202259_user_account_relationship.cs" />
+    <Compile Include="Migrations\201505220202259_user_account_relationship.Designer.cs">
+      <DependentUpon>201505220202259_user_account_relationship.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\AccountModel.cs" />
@@ -75,14 +71,11 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201505212225084_init.resx">
-      <DependentUpon>201505212225084_init.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201505220117180_init.resx">
+      <DependentUpon>201505220117180_init.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201505212244162_added_password.resx">
-      <DependentUpon>201505212244162_added_password.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201505212353460_added_ref_to_account.resx">
-      <DependentUpon>201505212353460_added_ref_to_account.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201505220202259_user_account_relationship.resx">
+      <DependentUpon>201505220202259_user_account_relationship.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

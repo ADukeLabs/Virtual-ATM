@@ -7,13 +7,13 @@ namespace Virtual_ATM.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class added_ref_to_account : IMigrationMetadata
+    public sealed partial class init : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(added_ref_to_account));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(init));
         
         string IMigrationMetadata.Id
         {
-            get { return "201505212353460_added_ref_to_account"; }
+            get { return "201505220117180_init"; }
         }
         
         string IMigrationMetadata.Source
