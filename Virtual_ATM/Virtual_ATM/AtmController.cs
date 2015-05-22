@@ -12,8 +12,8 @@ namespace Virtual_ATM
         public string customerNumber { get; set; }
         public string Option { get; set; }
         AtmDBcontext db = new AtmDBcontext();
-        AccountModel acc = new AccountModel();
-        UserModel user = new UserModel();
+        Account acc = new Account();
+        User user = new User();
         Router router = new Router();
         AtmView view = new AtmView();
         AtmModel model = new AtmModel();
